@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EzJavaScript</title>
+
+
+    <script type="text/JavaScript">
+
+
+        let maxTicketNumber = 100;
+        let minTicketNumber = 1;
+        let ticketNumbers = Array(10).fill(1);
+
+
+
+        ticketNumbers = ticketNumbers.map(_ => {
+            const seed = [Math.random() * minTicketNumber, Math.random() * maxTicketNumber];
+            const randomValue = seed[Math.floor(Math.random() * seed.length)];
+            return Math.round(randomValue)
+        });
+
+
+        document.write(ticketNumbers)
+        console.log(ticketNumbers);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

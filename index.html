@@ -5,24 +5,45 @@
     <title>EzJavaScript</title>
     <script type="text/JavaScript">
 
-        let maxTicketNumber = 100;
-        let minTicketNumber = 1;
-        let ticketNumbers = Array(10).fill(1);
+        let maxTal = 100;
+        let minTal = 1;
+        let tal = Array(10).fill(1);
+        let points = Array(10).fill(1);
 
 
-
-        ticketNumbers = ticketNumbers.map(_ => {
-            const seed = [Math.random() * minTicketNumber, Math.random() * maxTicketNumber];
-            const randomValue = seed[Math.floor(Math.random() * seed.length)];
-            return Math.round(randomValue)
+        tal = tal.map(_ => {
+            const seed = [Math.random() * minTal, Math.random() * maxTal];
+            const randomTal = seed[Math.floor(Math.random() * seed.length)];
+            return Math.round(randomTal)
         });
 
-        console.log(ticketNumbers);
+        points = points.map(_ => {
+            const seed = [Math.random() * minTal, Math.random() * maxTal];
+            const randomTal = seed[Math.floor(Math.random() * seed.length)];
+            return Math.round(randomTal)
+        });
 
+        tal.sort(function(a,b){return a-b});
+
+        function myFunction() {
+            for (let i = points.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * i)
+                let k = points[i]
+                points[i] = points[j]
+                points[j] = k
+            }
+        }
 
     </script>
+
 </head>
 <body>
-
+<h1>Välkommen till Labb3a</h1>
+<p>Denna sida visar upp vad JavaScript kan göra</p>
+<script>
+document.write("Min array " + tal)
+document.write("<br>");
+document.write("Min array" + points)
+</script>
 </body>
 </html>
